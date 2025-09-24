@@ -1,0 +1,86 @@
+# 📌 Data Science Interview Questions – Day 1/40
+
+Topic: Python (Core + Data Types – Intermediate Level) 🐍
+
+Here are today’s 10 interview questions — explained in a way that helps both beginners and professionals:
+
+What is the difference between mutable and immutable objects in Python? Give examples.
+
+Simple: Mutable objects can be changed (like lists), immutable ones can’t (like tuples).
+
+Production: In ML pipelines, you might keep a tuple for schema stability but update a list as streaming records arrive.
+
+How is memory management handled in Python?
+
+Simple: Python uses reference counting and a garbage collector.
+
+Production: In training models with large NumPy arrays, knowing this helps prevent crashes from memory leaks.
+
+Explain the difference between is and == operators with examples.
+
+Simple: == checks values, is checks object identity.
+
+Production: If you’re validating IDs from APIs, == is correct. Accidentally using is may cause mismatches.
+
+What is the difference between a shallow copy and a deep copy in Python?
+
+Simple: Shallow copy shares references; deep copy makes a full new object.
+
+Production: When cloning nested JSON records in ETL, shallow copy may overwrite data, but deep copy keeps them independent.
+
+How do Python’s list, tuple, set, and dictionary differ in terms of performance and usage?
+
+Simple:
+
+List → Ordered, allows duplicates
+
+Tuple → Fixed, can’t be changed
+
+Set → Unique items only
+
+Dict → Key-value pairs
+
+Production:
+
+Lists hold logs/events
+
+Tuples define configs like (userID, DOB)
+
+Sets remove duplicate claim IDs
+
+Dicts cache API responses or model configs
+
+What are Python’s built-in data structures, and when would you prefer one over another?
+
+Simple: Choose depending on whether you need ordering, immutability, or uniqueness.
+
+Production: Fraud detection often uses Sets for quick membership checks, while recommendation engines use Dicts for fast lookups.
+
+How are strings stored internally in Python, and why are they immutable?
+
+Simple: Strings can’t be changed once created.
+
+Production: This makes them safe as dictionary keys in config or feature dictionaries.
+
+Explain how hashing works in sets and dictionaries.
+
+Simple: Hashing converts data into a number for fast lookup.
+
+Production: In fraud prevention, hashing enables instant checks against millions of customer IDs.
+
+What’s the difference between a list comprehension and using a for loop for creating lists? Which one is faster and why?
+
+Simple: List comprehensions are shorter and faster.
+
+Production: Used for cleaning millions of rows quickly in preprocessing pipelines.
+
+How does Python manage object references and garbage collection?
+
+Simple: Old or unused objects get deleted automatically.
+
+Production: Important in Spark/PyTorch pipelines to avoid memory bloat.
+
+💡 Takeaway for Day 1:
+Python’s core data types (list, tuple, set, dict) are not just basics — they’re the foundation of every ETL job, feature pipeline, and ML application. Beginners should learn them to code cleanly, and professionals must master them for scalable, production-ready solutions.
+
+👉 Next Up (Day 2/40): Python (NumPy) 📊 ##
